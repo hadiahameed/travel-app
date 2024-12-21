@@ -1,0 +1,33 @@
+<!-- templates/spots_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Spots List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <span class="snowflake">❄️</span>
+        <span class="snowflake">❄️</span>
+        <span class="snowflake">❄️</span>
+        <span class="snowflake">❄️</span>
+        <span class="snowflake">❄️</span>
+        <span class="snowflake">❄️</span>
+    </div>
+
+    <h1>Top 10 Spots Related to "{{ interest }}" in "{{ city }}"</h1>
+    <p>For the selected date: {{ selected_date }}</p>
+
+    <ul class="spot-list">
+        {% for spot in spots %}
+            <li>{{ spot }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Go Back</a>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

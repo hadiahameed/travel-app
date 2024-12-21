@@ -1,0 +1,37 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Themed App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <span class="snowflake">❄️</span>
+        <span class="snowflake">❄️</span>
+        <span class="snowflake">❄️</span>
+        <span class="snowflake">❄️</span>
+        <span class="snowflake">❄️</span>
+        <span class="snowflake">❄️</span>
+    </div>
+
+    <h1>Where do you wanna go?</h1>
+    
+    <form action="/generate" method="POST">
+        <label for="interest">Interest:</label>
+        <input type="text" id="interest" name="interest" required><br><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label for="date">Pick a date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <button type="submit">Generate List</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
